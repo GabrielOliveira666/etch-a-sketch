@@ -1,5 +1,5 @@
 const DEFAULT_COLOR = 'rgb(10, 9, 9)';
-const DEFAULT_MODE = 'color';
+const DEFAULT_MODE = 'pen';
 const DEFAULT_SIZE = 16;
 
 let currentMode = DEFAULT_MODE;
@@ -39,7 +39,9 @@ function setGrid(size){
     for(let i = 0; i < size * size; i++){
         const gridElement = document.createElement('div');
 
-        gridElement.addEventListener('click', paint);
+        gridElement.addEventListener('mouseover', paint);
+        gridElement.addEventListener('mousedown', paint);
+
 
         gridElement.classList.add('grid-element');
         grid.appendChild(gridElement)
@@ -62,6 +64,7 @@ function changeSize(){
 }
 
 function paint(e){
+    if (e.type === 'mouseover' && !mouseDown) return
     if(currentMode == 'pen'){
         e.target.style.backgroundColor = currentColor;
     }
