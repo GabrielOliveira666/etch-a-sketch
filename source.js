@@ -56,6 +56,8 @@ function setGrid(size){
 function reloadGrid(){
     clear();
     setGrid(currentSize);
+    paint();
+    
 }
 
 function changeSize(){
