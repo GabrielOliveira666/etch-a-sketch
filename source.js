@@ -37,7 +37,7 @@ let mouseDown = false;
 
 //funções de alteração do grid
 function setGrid(size){
-    clear();
+    //clear();
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`
     
@@ -74,6 +74,10 @@ function clear(){
 
 setGrid(currentSize)
 
+function random(max, min){
+    return Math.round(Math.random() * (max - min) + min);
+}
+
 function paint(){
     const gridElement = document.querySelectorAll('.grid-element');
     console.log(gridElement[0])
@@ -97,12 +101,12 @@ function paint(){
                 elemento.style.backgroundColor = currentColor;
             }else if(mouseDown == true && currentMode == 'eraser'){
                 elemento.style.backgroundColor = 'rgb(255,255,255)';
+            }else if(mouseDown == true && currentMode == 'rainbow'){
+                elemento.style.backgroundColor = 'rgb(' + random(0, 255) + ',' + random(0, 255) + ',' + random(0, 255) + ')';
             }
         })
     })    
 }
-
-//paint()
-
+paint()
 
 

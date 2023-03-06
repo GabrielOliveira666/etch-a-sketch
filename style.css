@@ -1,26 +1,32 @@
 *{
     margin: 0;
     padding: 0;
-
-    overflow-y: hidden;
+}
+button{
+    overflow-x: hidden;
 }
 
 /*title*/
 .title{
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 35px;
+    font-size: 28px;
     color: #182625;
+
+    margin-top: 15px;
 }
 
 /*content*/
 .grid{
     display: grid;
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     margin: 15px 0;
 
-    border: 1px solid black;
+    border: 1px solid rgb(139, 139, 139);
+    border-radius: 5px;
+
+    box-shadow: 3px 2px rgba(0, 0, 0, 0.52);
 }
 
 .centralize{
@@ -49,8 +55,8 @@
 
     width: 150px;
     
-    padding: 15px 35px;
-    margin: 15px 20px;
+    padding: 15px 20px;
+    margin: 15px;
 }
 
 .button:hover{
@@ -78,6 +84,42 @@
 
 }
 
-.grid-element{
-    border: 1px solid black;
+/*footer*/
+
+.copyright{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #4d4d4d;
+    text-align: center;
+
+    margin: 10px 0;
+}   
+
+.social_buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.social_buttons span{
+    font-size: 35px;
+    margin: 0 5px 0 5px; 
+}
+
+.social_buttons i{
+    color: #141414;
+}
+
+@media screen and (max-width: 600px){
+    .settings{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button{
+        width: 45%;
+    }
+    .button:hover{
+        border-bottom: 5px solid #2a302f;
+    }
 }
